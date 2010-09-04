@@ -1,4 +1,3 @@
-require 'rubygems'
 require 'sinatra'
 
 get '/tracks' do
