@@ -1,0 +1,14 @@
+<h1>Piracy</h1>
+<h2>Making music piracy more like real piracy.</h2>
+
+<h2>Download the app</h2>
+
+<a href ="http://moustaki.org/resources/TrackDropper.apk">Download the Android app</a>
+
+<h2>Clues!</h2>
+
+<ul>
+<% @tracks.each do |track| %>
+<li><%= track.clue %></li>
+<% end %>
+</ul>

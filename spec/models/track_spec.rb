@@ -1,6 +1,34 @@
 require 'spec_helper'
 
 describe Track do
+  describe "getting a clue" do
+    subject { @track }
+    
+    before do
+      @track = Track.new
+      @track.stub(:postcode).and_return("N2 9GU")
+    end
+
+    its(:clue) {should == "Someone left a track in N2"}
+  end
+
+  describe "setting a postcode" do
+    subject { @track }
+    
+    before do
+      @track = Track.new
+      @track.lat = 51.535041
+      @track.lng = -0.122041
+
+      RestClient.stub(:get).with('http://www.uk-postcodes.com/latlng/51.535041,-0.122041.json').and_return(:response)
+      JSON.stub(:parse).with(:response).and_return({'postcode' => 'N1 9GU'})
+
+      @track.set_postcode
+    end
+
+    its(:postcode) {should == "N1 9GU"}
+  end
+
   describe "setting a url" do
     subject { @track }
 

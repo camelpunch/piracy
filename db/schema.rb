@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100904133750) do
+ActiveRecord::Schema.define(:version => 20100904174125) do
 
   create_table "tracks", :force => true do |t|
     t.string   "url"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20100904133750) do
     t.decimal  "lng",         :precision => 15, :scale => 10
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "postcode"
   end
 
 end
