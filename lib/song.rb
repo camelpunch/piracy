@@ -12,6 +12,8 @@ class Song < OpenStruct
   end
 
   def seven_digital_id
+    return nil if tracks.blank?
+
     self.tracks.each do |t|
       if t['catalog'] == "7digital"
         foreign_id = t['foreign_id'] 
