@@ -2,11 +2,17 @@ class TracksController < ApplicationController
   before_filter :new_track, :only => :create
 
   def index
-    tracks = Track.all(:origin => [params[:lat], params[:lng]],
-                       :within => 0.2)
+    if params[:lat] && params[:lng]
+      @tracks = Track.all(:origin => [params[:lat], params[:lng]],
+                          :within => 0.2)
+    else
+      @tracks = Track.all
+    end
+
     respond_to do |format|
+      format.html
       format.json do
-        render :json => {:tracks => tracks}
+        render :json => {:tracks => @tracks}
       end
     end
   end

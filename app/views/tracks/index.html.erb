@@ -1,0 +1,7 @@
+<h1>Tracks</h1>
+
+<ul>
+<% @tracks.each do |track| %>
+<li><%= track.artist_name %> <%= track.track_name %></li>
+<% end %>
+</ul>
