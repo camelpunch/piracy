@@ -6,7 +6,7 @@ class TracksController < ApplicationController
                        :within => 0.2)
     respond_to do |format|
       format.json do
-        render :json => tracks
+        render :json => {:tracks => tracks}
       end
     end
   end
