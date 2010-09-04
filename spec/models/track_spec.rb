@@ -3,13 +3,24 @@ require 'spec_helper'
 describe Track do
   describe "getting a clue" do
     subject { @track }
-    
-    before do
-      @track = Track.new
-      @track.stub(:postcode).and_return("N2 9GU")
+
+    context "when postcode is set" do
+      before do
+        @track = Track.new
+        @track.stub(:postcode).and_return("N2 9GU")
+      end
+
+      its(:clue) {should == "Someone left a track in N2"}
     end
 
-    its(:clue) {should == "Someone left a track in N2"}
+    context "when postcode is blank" do
+      before do
+        @track = Track.new
+        @track.stub(:postcode).and_return(nil)
+      end
+
+      its(:clue) {should == "Someone left a track somewhere"}
+    end
   end
 
   describe "setting a postcode" do

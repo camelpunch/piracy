@@ -21,7 +21,11 @@ class Track < ActiveRecord::Base
   end
 
   def clue
-    "Someone left a track in #{self.short_postcode}"
+    if postcode
+      "Someone left a track in #{self.short_postcode}"
+    else
+      "Someone left a track somewhere"
+    end
   end
   
   def distance
