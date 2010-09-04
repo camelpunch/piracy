@@ -1,4 +1,5 @@
 class Track < ActiveRecord::Base
+  acts_as_mappable
   before_save :set_url
 
   def set_url

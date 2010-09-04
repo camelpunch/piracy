@@ -13,3 +13,17 @@ Then /^there should be a track in the database with attributes:$/ do |table|
   )
 end
 
+Given /^there is a track with attributes:$/ do |table|
+  attributes = Hash[table.raw]
+  Track.create! attributes
+end
+
+When /^I attempt to plunder at "([^"]*)"$/ do |latlng|
+  lat, lng = latlng.split(',')
+  visit '/tracks', :get, :lat => lat, :lng => lng
+end
+
+Then /^I should receive some JSON containing "([^"]*)"$/ do |arg1|
+  response.body.should include(arg1)
+end
+
