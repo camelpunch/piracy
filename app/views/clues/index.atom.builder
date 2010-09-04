@@ -3,7 +3,7 @@ atom_feed do |feed|
   feed.updated @tracks.first.created_at
 
   @tracks.each do |track|
-    feed.entry(track) do |entry|
+    feed.entry(track, :url => "http://maps.google.co.uk/maps?q=#{track.short_postcode}") do |entry|
       entry.title track.clue
     end
   end
