@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.root :controller => :home
+  map.resources :clues, :only => :index
   map.resources :tracks
+  map.root :controller => :home
 end

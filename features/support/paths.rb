@@ -8,6 +8,9 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
+    when /the clues atom feed/
+      clues_path(:format => :atom)
+
     when /the home\s?page/
       '/'
 
