@@ -5,6 +5,7 @@ class Track < ActiveRecord::Base
   def set_url
     song = Echonest.find_song(artist_name, track_name)
     self.url = song.seven_digital_url
+  rescue Echonest::SongNotFound
   end
 
   def distance
