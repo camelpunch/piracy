@@ -2,6 +2,8 @@
 
 <ul>
 <% @tracks.each do |track| %>
-<li><%= track.artist_name %> <%= track.track_name %></li>
+  <li><%= track.artist_name %> <%= track.track_name %>
+  <%= link_to 'Map', "http://maps.google.com/maps?q=#{track.lat}+#{track.lng}+(#{track.track_name})" %> 
+  </li>
 <% end %>
 </ul>
