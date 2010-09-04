@@ -2,6 +2,8 @@ class Track < ActiveRecord::Base
   acts_as_mappable :default_units => :kms
   before_save :set_url, :set_postcode
 
+  default_scope :order => 'id DESC'
+
   def set_url
     song = Echonest.find_song(artist_name, track_name)
     self.url = song.seven_digital_url
