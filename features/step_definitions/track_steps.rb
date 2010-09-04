@@ -27,3 +27,8 @@ Then /^I should receive some JSON containing "([^"]*)"$/ do |arg1|
   response.body.should include(arg1)
 end
 
+Then /^I should receive some JSON not containing "([^"]*)"$/ do |arg1|
+  response.body.should_not include(arg1)
+end
+
+

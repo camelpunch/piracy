@@ -1,5 +1,5 @@
 class Track < ActiveRecord::Base
-  acts_as_mappable
+  acts_as_mappable :default_units => :kms
   before_save :set_url
 
   def set_url
