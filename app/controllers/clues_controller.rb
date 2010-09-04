@@ -1,6 +1,6 @@
 class CluesController < ApplicationController
   def index
-    @tracks = Track.all :order => 'id DESC'
+    @tracks = Track.all
 
     respond_to do |format|
       format.atom
