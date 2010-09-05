@@ -1,10 +1,10 @@
 Feature: Pick up tracks
   As a pirate
-  I want to plunder all of the music industry's treasure
-  So that I can hear some choonz
+  I want t' plunder all o' the music industry's treasure
+  So that I can hear some choonz and a bottle 'o rum.
 
   Background:
-    Given there is a track with attributes:
+    Given there be a track with attributes:
       | track_name  | Never Gonna Give You Up |
       | artist_name | Rick Astley             |
       | lat         | 51.535041               |

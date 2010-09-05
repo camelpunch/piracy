@@ -11,7 +11,7 @@ module NavigationHelpers
     when /the clues atom feed/
       clues_path(:format => :atom)
 
-    when /the home\s?page/
+    when /tha shanty page/
       '/'
 
     # Add more mappings here.

@@ -4,12 +4,12 @@ Feature: Drop track
   So that a pirate can plunder it
 
   Scenario: Drop track
-    When I drop a track with the following attributes:
+    When I drop me a track with tha following attributes:
       | track_name  | Never Gonna Give You Up |
       | artist_name | Rick Astley             |
       | lat         | 51.538381               |
       | lng         | -0.116258               |
-    Then there should be a track in the database with attributes:
+    Then there should be a track in tha database with attributes:
       | track_name  | Never Gonna Give You Up |
       | artist_name | Rick Astley             |
       | lat         | 51.538381               |
