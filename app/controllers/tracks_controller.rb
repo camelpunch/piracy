@@ -3,10 +3,11 @@ class TracksController < ApplicationController
 
   def index
     if params[:lat] && params[:lng]
-      @tracks = Track.all(:origin => [params[:lat], params[:lng]],
+      @tracks = Track.all(:conditions => 'url IS NOT NULL',
+                          :origin => [params[:lat], params[:lng]],
                           :within => 0.2)
     else
-      @tracks = Track.all
+      @tracks = Track.all(:conditions => 'url IS NOT NULL')
     end
 
     respond_to do |format|
